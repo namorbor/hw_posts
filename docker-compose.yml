@@ -1,0 +1,19 @@
+services:
+  blog:
+    build: .
+    ports:
+      - "${PORT:-8080}:8080"
+    environment:
+      PORT: "8080"
+      DATA_DIR: /app/data
+      LOG_FILE: /app/logs/log.txt
+      JWT_SECRET: ${JWT_SECRET:-}
+      JWT_TTL_HOURS: ${JWT_TTL_HOURS:-24}
+    volumes:
+      - blog-data:/app/data
+      - blog-logs:/app/logs
+    stop_grace_period: 30s
+
+volumes:
+  blog-data:
+  blog-logs:

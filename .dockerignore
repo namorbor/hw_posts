@@ -1,0 +1,12 @@
+.git
+.env
+data
+log.txt
+logs
+bin
+dist
+*.test
+coverage.out
+.DS_Store
+.idea
+.vscode
